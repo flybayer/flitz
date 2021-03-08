@@ -4,10 +4,11 @@ services:
     env: node
     plan: starter
     buildCommand: yarn --frozen-lockfile --prod=false &&
-      blitz build &&
-      blitz prisma db push --preview-feature --accept-data-loss
+      blitz build && ls -al
     startCommand: blitz start
     envVars:
+      - key: NODE_ENV
+        value: production
       - key: NODE_ENV
         value: production
       - key: DATABASE_URL

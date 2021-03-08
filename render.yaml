@@ -4,7 +4,7 @@ services:
     env: node
     plan: starter
     buildCommand: yarn --frozen-lockfile --prod=false &&
-      blitz build && ls -al
+      blitz build && ls -al && echo "=====" && ls -al .blitz/build
     startCommand: blitz start
     envVars:
       - key: NODE_ENV
